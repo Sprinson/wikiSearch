@@ -27,7 +27,7 @@ $(document).ready(function(){
 			console.log(arrayID);
 			$('li').each(function(x){
 				var url = "http://en.wikipedia.org/?curid=" + arrayID[x];
-				$(this).html("<a href='"+url+"'>" + arrayTitle[x] + ": " + arrayDesc[x]);
+				$(this).html("<a href='"+url+"' target='_blank'>" + "<h1>" + arrayTitle[x] + "</h1>" + arrayDesc[x]);
 				
 			});
 			
