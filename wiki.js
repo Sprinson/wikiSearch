@@ -1,23 +1,24 @@
 
 $(document).ready(function(){
 
-	var title, url;
-    var api = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
+	var title, finalURL;
+    var apiURL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
     var cb = '&callback=?';
+    var urlRandom = "https://en.wikipedia.org/wiki/Special:Random";
 	
 
 	function click(){
-			title = document.getElementById('wiki').value;
-			url = api + title + cb;
-			retrieve();
+		title = document.getElementById('wiki').value;
+		finalURL = apiURL + title + cb;
+		retrieve();
 	}
-	
 
+	
 	function retrieve(){
 		var arrayTitle = [];
 		var arrayDesc = [];
 		var arrayID = [];
-		$.getJSON(url, function(json){
+		$.getJSON(finalURL, function(json){
 			console.log(json);
 			$.each(json.query.pages, function(index, item) {
 				arrayTitle.push(item.title);
@@ -37,6 +38,10 @@ $(document).ready(function(){
 
 	$("#getWiki").on("click", function(){
 		click();
+	});
+
+	$("#lucky").click(function(){
+		window.location.href=urlRandom;
 	});
 
 });
