@@ -8,13 +8,16 @@
 
 <body>
 
-  <div id = "test" class="jumbotron jumbotron-fluid">
+  <div id = "test" class="jumbotron jumbotron-fluid container">
     
     <div class="container">
-      <h1 class="display-3"></h1>
-      <p class="lead"></p>
+      
+        <h1 class="display-3">WIKI SEARCHY</h1>
+        <img id = "logo" align="right" src="images/Wikipedia-logo-v2.png">
+      
+      <p class="lead">Search for what you want, or try to get lucky</p>
       <input type="text" id="wiki" placeholder="TYPE HERE" autocomplete="off"/>
-      <button id = 'getWiki' class = 'btn btn-primary'>Search Wiki</button>
+      <button id = 'getWiki' class = 'btn btn-primary'>SEARCH</button>
       <button id = 'lucky' class = 'btn btn-primary'>Feeling Lucky?</button>
     </div>
     
@@ -22,7 +25,7 @@
 
 
   <div class="container">
-    <ul>
+    <ul class="container" id="results">
       <li></li>
       <li></li>
       <li></li>
